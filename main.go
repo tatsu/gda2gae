@@ -7,11 +7,11 @@ import (
 	"net/http"
 )
 
-func main() {
+func init() {
 	http.Handle("/", http.FileServer(http.Dir("./build/web/")))
 
 	http.HandleFunc("/api/hello", helloWorld)
-	http.ListenAndServe(":8080", nil)
+//	http.ListenAndServe(":8080", nil)
 }
 
 // helloWorld handler returns a json response with a 'Hello, World' message.
